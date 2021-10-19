@@ -13,3 +13,4 @@ A patch management system to -
 
 ## Example Attack Scenarios
 
+OWASP WebGoat uses a vulnerable version of the Xstream library to transform an XML document into a Java object. In the pom.xml file, we notice that the library’s version 1.4.5. Looking for public exploits on the internet reveals that this version suffers from a severe deserialization vulnerability, which leads to remote code execution.
