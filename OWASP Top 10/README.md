@@ -14,4 +14,4 @@ application security data set".
 
 The risks are ordered according to <ins>prevalence, detectability, impact and exploitability.</ins>
 
-Note: The most recent version was released in 2021 and that's what we are going to be discussing today.
+Note: The most recent version was released in 2021 and that's what we are going to be discussing in this section.
