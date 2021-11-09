@@ -79,6 +79,3 @@ Once Ms. Palmer’s computer receives the bit stream through a physical medium (
 - The data will then flow into the receiver's session layer which will pass the data along to the presentation layer and then end the communication session. 
 - The presentation layer will then remove the compression and pass the raw data up to the application layer. 
 - The application layer will then feed the human-readable data along to Ms. Palmer’s email software, which will allow her to read Mr. Cooper’s email on her laptop screen.
-
-
-
