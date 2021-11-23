@@ -1,0 +1,23 @@
+# Perfect Forward Secrecy
+
+The idea of ‘Perfect Forward Secrecy’, or sometimes simply ‘Forward Secrecy’, is that something that is encrypted and considered a ‘secret’ now, should remain encrypted and not be discoverable in the future. If there is a means whereby the ‘secret’ can be revealed in the future, then there is no ‘forward secrecy’, meaning that while the information may be protected now, it may not be at some future point in time. Encryption keeps data safe, but only as long as the private key is safe.
+
+## The need for Perfect Forward Secrecy
+
+Without the use of perfect forward secrecy, the repercussions are far more severe if a private key is compromised. Suddenly, an attacker instantly has access to all the past data that was transmitted between a client and server using a particular key. Hypothetically, they could record encrypted traffic for as long as they like, waiting until they’re able to get their hands on the private key. Then, once they have it, they can go back and decrypt everything they’ve been logging.  
+
+Let’s say you login to your online bank using HTTPS to protect your password as it’s sent over the internet. Next year, a hacker manages to get their hands on your bank’s TLS private key after the sysadmin accidentally uploads the private key to GitHub. Could a hacker use that private key to decrypt your session data from last year and get your password? Without forward secrecy, the answer is yes.
+
+Hackers can do this when perfect forward secrecy isn’t present due to the nature of the key exchange between the client and the server. First, the client creates a pre-master secret, which is encrypted with the public key of the server. Then, it’s sent to the server, where it’s decrypted with its private key. Now, both the client and server have the pre-master secret.
+
+From this point forward, session keys are generated based on the pre-master secret, and are used for the back-and-forth communication. These session keys are called the master secret. But what if the server uses the same private key repeatedly for the pre-master encryption process? Then, if an attacker were able to steal that key, they’d be able to eavesdrop on and decrypt all the server’s encrypted communications, past data included.
+
+To make this scenario happen, the attacker would monitor traffic to obtain the two random numbers used in the encryption process (one by the client and one by the server). They are transmitted in plain text, so it wouldn’t be difficult. They could also obtain the encrypted pre-master secret. Since they now have the server’s private key, they can decrypt the pre-master secret with it. At this point, they have all the pieces of the puzzle necessary to generate the master secret, and thus decrypt all the session data.
+
+One particular session may not contain any sensitive data, but if hackers are watching long enough then there’s a good chance that they’ll eventually be able to find something worth their while.
+
+When an encryption system ensures perfect forward secrecy, it automatically and frequently changes the keys it uses to encrypt and decrypt information, such that if the latest key is compromised, it exposes only a small portion of the user’s sensitive data. Encryption tools with perfect forward secrecy switch their keys as frequently as every message in text-based conversation, every phone call in the case of encrypted calling apps, or every time a user loads or reloads an encrypted web page in his or her browser. This means if a user’s device is stolen or an account is hacked and eavesdroppers steal a decryption key, it doesn't matter. The latest message gets compromised, but any message prior to that message or after it can’t be decrypted. Thus, after the TLS handshake, 
+
+While schemes for perfect forward secrecy date back to the early '90s, the feature was first practically implemented in Off-The-Record Messaging, a protocol for encrypted instant messaging invented in 2004 that encrypted messages with a new key every time a sender alternated in an instant messaging conversation. In that system, multiple messages sent back-to-back by the same sender still used the same key.
+
+The newer messaging protocol Signal improved the key-switching trick and popularized perfect forward secrecy more than ever. Using a system it calls a "double ratchet," Signal generates a new encryption key with every message, even those sent consecutively by the same person. For perfect forward secrecy to offer its intended protection in messaging apps, the user needs to periodically delete their decrypted messages or move them to a more secure device. Signal recently added a feature to allow self-destructing messages, which takes care of that for you.
