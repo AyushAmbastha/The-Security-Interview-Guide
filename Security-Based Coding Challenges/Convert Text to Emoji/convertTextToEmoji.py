@@ -1,5 +1,5 @@
 def  emojiConverter(message):
-    words = message.split( " ")
+    words = message.split(" ")
     emojis = {
     ":)" : "😀",
     ":(" : "😞",
