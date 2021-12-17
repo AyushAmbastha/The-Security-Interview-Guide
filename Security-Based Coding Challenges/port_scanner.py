@@ -1,40 +1,47 @@
-import sys
 import socket
+import subprocess
+import sys
 from datetime import datetime
 
-# Defining a target
-if len(sys.argv) == 2:
-	
-	# translate hostname to IPv4
-	target = socket.gethostbyname(sys.argv[1])
-else:
-	print("Invalid ammount of Argument")
+# Ask for input
+remoteServer    = input("Enter a remote host to scan: ")
+remoteServerIP  = socket.gethostbyname(remoteServer)
 
-# Add Banner
-print("-" * 50)
-print("Scanning Target: " + target)
-print("Scanning started at:" + str(datetime.now()))
-print("-" * 50)
+# Check what time the scan started
+t1 = datetime.now()
+
+# Using the range function to specify ports (here it will scans all ports between 1 and 1024)
 
 try:
-	
-	# will scan ports between 1 to 65,535
-	for port in range(1,65535):
-		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		socket.setdefaulttimeout(1)
-		
-		# returns an error indicator
-		result = s.connect_ex((target,port))
-		if result ==0:
-			print("Port {} is open".format(port))
-		s.close()
-		
+    for port in range(1,1025):  
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        result = sock.connect_ex((remoteServerIP, port))
+        if result == 0:
+            print(f'Port {port} is Open')
+        sock.close()
+
 except KeyboardInterrupt:
-		print("\n Exitting Program !!!!")
-		sys.exit()
+    print ("You pressed Ctrl+C")
+    sys.exit()
+
 except socket.gaierror:
-		print("\n Hostname Could Not Be Resolved !!!!")
-		sys.exit()
+    print ('Hostname could not be resolved. Exiting')
+    sys.exit()
+
 except socket.error:
-		print("\ Server not responding !!!!")
-		sys.exit()
+    print ("Couldn't connect to server")
+    sys.exit()
+
+# Checking the time again
+t2 = datetime.now()
+
+# Calculates the difference of time, to see how long it took to run the script
+total =  t2 - t1
+
+# Printing the information to screen
+print ('Scanning Completed in: ', total)
+
+# scanners can attempt to avoid some common detection rules by altering their scanning rate, 
+# accessing ports out of order, or spoofing their source address.
+
+# Prevention - Firewalls, port scan yourself, nmap.
