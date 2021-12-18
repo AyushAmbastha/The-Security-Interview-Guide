@@ -25,7 +25,7 @@ There are two things to notice here -
 
 When the attacker attempts to login using the SQLi mentioned above, the entire ACCOUNT_DETAILS database is displayed.
 
-<ins>Denial of Service using Batched statments</ins>
+<ins>Denial of Service using Batched statements</ins>
 
 Consider the following SQL query - 
 
