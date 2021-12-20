@@ -2,9 +2,8 @@
 
 ## Description
 
-Previously known as Sensitive Data Exposure, Cryptographic Failures deals with the protection of data 
-at rest and in transit. This type of flaw occurs when an application or a company inadvertently exposes 
-senstive data. It's different from a data breach in the sense that in a data breach, the attacker steals 
+Previously known as Sensitive Data Exposure, Cryptographic Failures deals with the protection of data at rest and in transit. This type of flaw occurs when an application or a company inadvertently exposes 
+sensitive data. It's different from a data breach in the sense that in a data breach, the attacker steals 
 information from the database whereas a Cryptographic Failure occurs when the data is not adequently 
 protected. It can be the result of weak encryption, software flaws, storing passwords without hashes etc. 
 Also, if the data falls under any privacy laws such as GDPR or PCI DSS (TODO), there are additional things 
@@ -29,4 +28,4 @@ A website doesn't enforce TLS on all pages. The attacker can not only monitor th
 also alter them, causing a man-in-the-middle attack (TODO).
 
 The attacker can also hijack the user session by stealing the user's session cookie and replaying it to 
-the server to impersonate the user. He can then view and modify sensitive information. h
+the server to impersonate the user. He can then view and modify sensitive information.

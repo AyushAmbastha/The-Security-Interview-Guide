@@ -2,11 +2,11 @@
 
 The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
 
-Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).
+Each device connected to the Internet has a unique IP address which other machines use to find the device - like a street address is used to find a particular home. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).
 
 ## How does DNS work?
 
-The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
 
 For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.
 
@@ -79,3 +79,18 @@ The recursive resolver also has additional functionality depending on the types 
 1. If the resolver does not have the A records, but does have the NS records for the authoritative nameservers, it will query those name servers directly, bypassing several steps in the DNS query. This shortcut prevents lookups from the root and .com nameservers (in our search for example.com) and helps the resolution of the DNS query occur more quickly.
 2. If the resolver does not have the NS records, it will send a query to the TLD servers (.com in our case), skipping the root server.
 3. In the unlikely event that the resolver does not have records pointing to the TLD servers, it will then query the root servers. This event typically occurs after a DNS cache has been purged.
+
+## DNS Records
+
+DNS servers create a DNS record to provide important information about a domain or hostname, particularly its current IP address. The most common DNS record types are:
+
+1. Address Mapping record (A Record) - also known as a DNS host record, stores a hostname and its corresponding IPv4 address.
+2. IP Version 6 Address record (AAAA Record) - stores a hostname and its corresponding IPv6 address.
+3. Canonical Name record (CNAME Record) - can be used to alias a hostname to another hostname. When a DNS client requests a record that contains a CNAME, which points to another hostname, the DNS resolution process is repeated with the new hostname.
+4. Mail exchanger record (MX Record) - specifies an SMTP email server for the domain, used to route outgoing emails to an email server.
+5. Name Server records (NS Record) - specifies that a DNS Zone, such as “example.com” is delegated to a specific Authoritative Name Server, and provides the address of the name server.
+6. Reverse-lookup Pointer records (PTR Record) - allows a DNS resolver to provide an IP address and receive a hostname (reverse DNS lookup).
+7. Certificate record (CERT Record) - stores encryption certificates such as PKIX, SPKI, PGP, and so on.
+8. Service Location (SRV Record) - a service location record, like MX but for other communication protocols.
+9. Text Record (TXT Record) - typically carries machine-readable data such as opportunistic encryption, sender policy framework, DKIM, DMARC, etc.
+10. Start of Authority (SOA Record) - this record appears at the beginning of a DNS zone file, and indicates the Authoritative Name Server for the current DNS zone, contact details for the domain administrator, domain serial number, and information on how frequently DNS information for this zone should be refreshed.
