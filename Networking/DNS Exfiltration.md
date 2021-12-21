@@ -9,9 +9,6 @@ For example, the credit card information such as "8478239820193456" would be enc
 The external DNS server may or may not return an answer, but it will most certainly collect the information contained in the DNS query - this is the exfiltrated data. This external DNS server would be the server that the attacker has control over. The attacker can now take the encoded bits, decode them and put them together to get the sensitive data.
 
 ### Mitigation
-
-Some mitigation measures to improve security by designed principles are:
-
 * Implementing network inspection via security products where DNS traffic can be analyzed
 * Limiting clients DNS traffic and creating rules triggered when a specific threshold is reached
 * Setting-up dedicated DNS servers
