@@ -1,6 +1,6 @@
 # TLS Cipher Suites
 
-The security of virtually every internet connection depends on SSL/TLS encryption. What determines the level of protection for these connections is the choice of a cipher suite. Cipher suites are sets of instructions that enable secure network connections through Transport Layer Security (TLS), often still referred to as Secure Sockets Layer (SSL). Behind the scenes, these cipher suites provide a set of algorithms and protocols required to secure communications between clients and servers. Cipher suites are required because of the variety of servers, operating systems and browsers. There needs to be a way to accommodate all these combinations, so cipher suites come in handy to ensure compatibility.
+Cipher suites are sets of instructions that enable secure network connections through Transport Layer Security (TLS). Behind the scenes, these cipher suites provide a set of algorithms and protocols required to secure communications between clients and servers. Cipher suites are required because of the variety of servers, operating systems and browsers. There needs to be a way to accommodate all these combinations, so cipher suites come in handy to ensure compatibility.
 
 To initiate an HTTPS connection, the two parties – the web server and the client – perform an SSL handshake. During the handshake process the two parties agree on a mutual cipher suite. The cipher suite is then used to negotiate a secure HTTPS connection. A cipher suite consists of - 
 

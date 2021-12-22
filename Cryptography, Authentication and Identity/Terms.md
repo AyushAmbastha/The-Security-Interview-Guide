@@ -1,13 +1,21 @@
 # Important terms
 
 ## Confidentiality
-Confidentiality is the similar to privacy in the sense that it prevents unauthorized access to data. It entails ensuring that the data is only accessible to those who are authorized to use it, as well as restricting access to others. It keeps vital information from getting into the wrong hands. Data encryption is a great example of keeping information private.
+Confidentiality is the act of keeping information private. It entails ensuring that the data is only accessible to those who are authorized to use it, as well as restricting access to others. Data encryption is a way of ensuring confidentiality.
 
 ## Integrity
 This principle assures that the data is genuine, correct, and safe from unwanted threat actors or unintentional user alteration. If any changes are made, precautions should be taken to protect sensitive data from corruption or loss, as well as to quickly recover from such an incident. Furthermore, it denotes that the source of information must be genuine.
 
 ## Availability
 This principle ensures that information is constantly available and helpful to those who have access to it. It ensures that system failures or cyber-attacks do not obstruct these accesses.
+
+## Authentication vs. Authorization
+
+Authentication is the security practice of confirming that someone is who they claim to be, while authorization is the process of determining which level of access each user is granted.
+
+For example, when a user signs into their email or online banking account, they use a login and password combination that only they are supposed to know. The software uses this information to authenticate the user. Some applications may require two-factor authentication or a biometrical confirmation, such as a thumbprint or face ID scan.
+
+Once authenticated, a user can only see the information they are authorized to access. In the case of an online banking account, the user can only see information related to their personal banking account. Meanwhile, a fund manager at the bank can log in to the same application and see data on the bank’s overall financial holdings. Since the bank handles very sensitive personal information, it’s entirely possible that no one has unrestricted access to the data.
 
 ## Encryption
 Encryption is the process of securely encoding data in such a way that only authorized users with a key or password can decrypt the data to reveal the original. There are two basic types of encryption; symmetric key and public key/asymmetric. In symmetric key, the same key is used to encrypt and decrypt data, like a password. In asymmetric or public key encryption, one key is used to encrypt data and a different key is used to decrypt the data.
