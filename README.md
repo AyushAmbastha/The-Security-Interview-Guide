@@ -6,8 +6,8 @@ The aim of this repository is to help students prepare for jobs in the Security 
 
 ## Contributing
 
-Pull Requests of any kind are welcome. If you feel like somethings missing in this guide, feel free to send a PR to the repository and see your name appear on the contributors list! (TODO)
-## Contributors ✨
+Pull Requests of any kind are welcome. If you feel like somethings missing in this guide, feel free to send a PR to the repository and see your name appear on the contributors list!
+### Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
