@@ -15,6 +15,18 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "AyushAmbastha",
+      "name": "AyushAmbastha",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27074500?v=4",
+      "profile": "https://github.com/AyushAmbastha",
+      "contributions": [
+        "content",
+        "code",
+        "doc",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
