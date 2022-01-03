@@ -6,8 +6,8 @@ The aim of this repository is to help students prepare for jobs in the Security 
 
 ## Contributing
 
-Pull Requests of any kind are welcome. If you feel like somethings missing in this guide, feel free to send a PR to the repository and see your name appear on the contributors list! (TODO)
-## Contributors ✨
+Pull Requests of any kind are welcome. If you feel like somethings missing in this guide, feel free to send a PR to the repository and see your name appear on the contributors list!
+### Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -17,6 +17,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/keertanakamesh"><img src="https://avatars.githubusercontent.com/u/57653809?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Keertana Kamesh</b></sub></a><br /><a href="#content-keertanakamesh" title="Content">🖋</a> <a href="https://github.com/AyushAmbastha/The-Security-Interview-Guide/commits?author=keertanakamesh" title="Code">💻</a> <a href="https://github.com/AyushAmbastha/The-Security-Interview-Guide/commits?author=keertanakamesh" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/AyushAmbastha"><img src="https://avatars.githubusercontent.com/u/27074500?v=4?s=100" width="100px;" alt=""/><br /><sub><b>AyushAmbastha</b></sub></a><br /><a href="#content-AyushAmbastha" title="Content">🖋</a> <a href="https://github.com/AyushAmbastha/The-Security-Interview-Guide/commits?author=AyushAmbastha" title="Code">💻</a> <a href="https://github.com/AyushAmbastha/The-Security-Interview-Guide/commits?author=AyushAmbastha" title="Documentation">📖</a> <a href="#maintenance-AyushAmbastha" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
