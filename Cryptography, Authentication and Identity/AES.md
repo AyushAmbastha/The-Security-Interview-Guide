@@ -70,47 +70,12 @@ After all the rounds are completed, the original phrase will look like a set of 
 AES decryption begins with the inverse round key. Afterwards, the algorithm reverses every single action (shift rows, byte substitution, and, later on, column mixing), until it deciphers the original message.
 
 ## Does AES encryption have any security issues?
-Even though AES is an exceptionally secure type of encryption, it might not be 100% impenetrable a few years from now. No known successful real-life attacks have been recorded so far, however, the rapid evolution of technology might pose potential threats in the future.
+Even though AES is an exceptionally secure type of encryption, it might not be 100% impenetrable a few years from now. No known successful real-life attacks have been recorded so far. A “brute-force” type of attack is virtually useless against the AES algorithm, as it would potentially take billions of years to crack it. However, if the encryption is implemented incorrectly, there might be some potential risks. Luckily, no hacker will be able to crack a correctly configured AES system. So, as long as there’s no error, your sensitive information is completely safe.
 
-Also, mistakes happen. If someone implements AES encryption incorrectly, the potential errors might serve as a gateway for hackers. Luckily, the correct usage of AES prevents successful attacks from happening.
+Related-key attacks - Unlike brute-force attacks, related-key attacks target the encryption key itself. They require less time and effort, and have a higher chance of being successful. This type of attack can work if the hacker knows (or suspects) the relationship between two different keys. A few times, AES encryption has been a target of related-key attacks, the most notable one discovered in 2009. To prevent similar things from happening, cryptographers improved the complexity of the AES key schedule.
 
+Side-channel attacks - In case of improper implementation of a computer system, AES encryption is not completely immune to side-channel attacks. This type of attack relies on data leakage, for example, electromagnetic leaks. However, if AES is properly implemented, it can help detect the data leaks before anything bad happens.
 
-Related-key attacks
-Unlike brute-force attacks, related-key attacks target the encryption key itself. They require less time and effort, and have a higher chance of being successful.
+Known-key distinguishing attacks - In 2009, there was an attempt to crack AES-128 with the help of a known-key distinguishing attack. It proved to be successful against the 8-round version of the 128-bit key length AES encryption. However, the actual AES-128 goes through 10 rounds of encryption, which means that the attack was not a threat in real life. Also, to perform a known-key distinguishing attack, the hacker has to know the key, which is very unlikely.
 
-This type of attack can work if the hacker knows (or suspects) the relationship between two different keys.
-
-A few times, AES encryption has been a target of related-key attacks, the most notable one discovered in 2009. To prevent similar things from happening, cryptographers improved the complexity of the AES key schedule.
-
-Side-channel attacks
-In case of improper implementation of a computer system, AES encryption is not completely immune to side-channel attacks.
-
-This type of attack relies on data leakage, for example, electromagnetic leaks.
-
-However, if AES is properly implemented, it can help detect the data leaks before anything bad happens.
-
-Known-key distinguishing attacks
-In 2009, there was an attempt to crack AES-128 with the help of a known-key distinguishing attack.
-
-It proved to be successful against the 8-round version of the 128-bit key length AES encryption. However, the actual AES-128 goes through 10 rounds of encryption, which means that the attack was not a threat in real life.
-
-Also, to perform a known-key distinguishing attack, the hacker has to know the key, which is very unlikely.
-
-Key-recovery attacks
-In 2011, a key-recovery attack was done as a test to crack AES.
-
-This type of attack requires the hacker to have at least one pair of encrypted and decrypted messages.
-
-However, the test didn’t provide significant results, as it only proved to be four times faster than a brute-force attack (which would still take billions of years).
-
-Conclusion
-After reading this article, you might get the idea why AES encryption is referred to as the “gold standard” of encryption techniques.
-
-Its speed, versatility, and immunity to all kinds of cyber attacks make it one of the most useful tools of today’s world.
-
-And we are incredibly lucky it exists. 
-
-Is AES encryption secure?
-Yes. A “brute-force” type of attack is virtually useless against the AES algorithm, as it would potentially take billions of years to crack it. However, if the encryption is implemented incorrectly, there might be some potential risks.
-
-Luckily, no hacker will be able to crack a correctly configured AES system. So, as long as there’s no error, your sensitive information is completely safe.
+Key-recovery attacks - In 2011, a key-recovery attack was done as a test to crack AES. This type of attack requires the hacker to have at least one pair of encrypted and decrypted messages. However, the test didn’t provide significant results, as it only proved to be four times faster than a brute-force attack (which would still take billions of years).

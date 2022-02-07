@@ -8,7 +8,7 @@ The RSA algorithm is an asymmetric cryptography algorithm; this means that it us
 1. Select two large prime numbers, $x$ and $y$. The prime numbers need to be large so that they will be difficult for someone to figure out.
 2. Calculate $n = x * y$.
 3. Calculate the totient function; $\phi(n) = (x-1)(y-1)$.
-4. Select an integer $e$, such that $e$ is co-prime to $\phi(n)$ and $1 < e < \phi(n)$. The pair of numbers $(n,e)$ makes up the public key.\
+4. Select an integer $e$, such that $e$ is co-prime to $\phi(n)$ i.e., $gcd(e, \phi(n)) = 1$ and $1 < e < \phi(n)$. The pair of numbers $(n,e)$ makes up the public key.\
 Note: Two integers are co-prime if the only positive integer that divides them is 1.
 5. Calculate $d$ such that $e.d = 1$ mod $\phi(n)$. $d$ can be found using the extended euclidean algorithm. The pair $(n,d)$ makes up the private key.
 
@@ -21,6 +21,8 @@ $C = P^{e}$ mod $n$
 Using the private key $(n,d)$, the plaintext can be found using:
 
 $P = C^{d}$ mod $n$
+
+What makes RSA difficult to break is that nobody knows how to compute the inverse RSA (the "decryption") without knowing the prime factors of the $n$; and for large numbers $x$ and $y$, $n$ would be very large making the prime factorization hard. 
 
 ## Diffie Hellman Key Exchange
 
@@ -43,7 +45,7 @@ $A^b$ mod $p$ = $g^{ab}$ mod $p$ = $g^{ba}$ mod $p$ = $B^a$ mod $p$
 
 Only a and b are kept secret. All the other values – $p, g, g^a$ mod $p$, and $g^b$ mod $p$ – are sent in the clear. The strength of the scheme comes from the fact that $g^{ab}$ mod $p$ = $g^{ba}$ mod $p$ take extremely long times to compute by any known algorithm. Once Alice and Bob compute the shared secret they can use it as an encryption key, known only to them, for sending messages across the same open communications channel.
 
-Of course, much larger values of $a, b,$ and $p$ would be needed to make this example secure. If $p$ is a prime of at least 600 digits, then even the fastest modern computers using the fastest known algorithm cannot find $a$ and $b$
+Of course, much larger values of $a, b,$ and $p$ would be needed to make this example secure. If $p$ is a prime of at least 600 digits, then even the fastest modern computers using the fastest known algorithm cannot find $a$ and $b$ given only $g$, $p$ and $g^a$ mod $p$. Such a problem is called the discrete logarithm problem and the computation of $g^a$ mod $p$ is known as modular exponentiation and can be done efficiently even for large numbers. 
 
 ## RSA vs. Diffie Hellman
 RSA tends to be more popular for securing information on the internet. Because the Diffie-Hellman Key Exchange doesn’t authenticate either party, a hacker could more easily send spoof messages posing as one of the parties in the transaction. Thus, RSA is preferred over Diffie Hellman for verifying certificates because the Diffie Hellman approach requires an additional digital signature component.
