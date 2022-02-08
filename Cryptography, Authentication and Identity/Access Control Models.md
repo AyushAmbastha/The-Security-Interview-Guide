@@ -1,8 +1,8 @@
 # Access Control Models
 After a user is authenticated to an application, the tasks that a user is authorized to perform can be determined in one of several ways:
 
-**Mandatory access control (MAC)**\
- Mandatory access control establishes strict security policies for individual users and the resources, systems, or data they are allowed to access. These policies are controlled by an administrator; individual users are not given the authority to set, alter, or revoke permissions in a way that contradicts existing policies.
+**Mandatory access control (MAC)**
+Mandatory access control establishes strict security policies for individual users and the resources, systems, or data they are allowed to access. These policies are controlled by an administrator; individual users are not given the authority to set, alter, or revoke permissions in a way that contradicts existing policies.
 
 Under this system, both the subject (user) and the object (data, system, or other resource) must be assigned similar security attributes in order to interact with each other. Consider the example where a bank’s president is authorized to access customer data files. Here the system administrator would also need to specify that those files can be viewed and altered by the president. While that process may seem redundant, it ensures that users cannot perform unauthorized actions simply by gaining access to certain data or resources.
 
