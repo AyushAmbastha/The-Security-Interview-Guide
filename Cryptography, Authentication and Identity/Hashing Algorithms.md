@@ -13,7 +13,7 @@ Hashing algorithms are just as abundant as encryption algorithms, but there are 
 
 ## MD5
 
-This is the fifth version of the Message Digest algorithm. MD5 creates 128-bit outputsand is typically expressed as a 32 digit hexadecimal number. It is commonly used to check the integrity of files. The algorithm is as follows - 
+This is the fifth version of the Message Digest algorithm. MD5 creates 128-bit outputs and is typically expressed as a 32 digit hexadecimal number. It is commonly used to check the integrity of files. The algorithm is as follows - 
 
 1. Padding Bits - When you receive the input string, you have to make sure the size is 64 bits short of a multiple of 512. When it comes to padding the bits, you must add one(1) first, followed by zeroes to round out the extra characters. 
 
@@ -88,7 +88,7 @@ SHA-2 a suite of hashing algorithms that contains SHA-224, SHA-256, SHA-384, and
 
 ## Hashing Passwords
 
-An important use for hashes is storing passwords.Actual passwords should never be stored directly in the database. Hashes of passwords can be stored to authenticate the user. Because it is highly unlikely that two passwords would produce the same hash, you can compare the stored hash with a hash of the password submitted by the user. If the two match, you can be sure that the user has the correct password.
+An important use for hashes is storing passwords. Actual passwords should never be stored directly in the database. Hashes of passwords can be stored to authenticate the user. Because it is highly unlikely that two passwords would produce the same hash, you can compare the stored hash with a hash of the password submitted by the user. If the two match, you can be sure that the user has the correct password.
 
 Protecting passwords with hashes has some unique problems. First, although hashes are not reversible, they are crackable using a brute-force method. You cannot produce the password from the hash, but you can create hashes of millions of passwords until you find one that matches. For this reason, the hash's strength isn't based so much on the key length of the hashing algorithm, but on the length of the password itself. And because passwords have such low entropy, are predictable, and are often too short, this usually is not a difficult task.
 
