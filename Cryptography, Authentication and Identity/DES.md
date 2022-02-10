@@ -1,6 +1,6 @@
 # Data Encryption Standard (DES)
 
-The Data Encryption Standard (DES) is a symmetric-key block cipher. It is an implementation of a Feistel Cipher. It takes plain text in blocks of 64 bits and converts them to ciphertext using keys of 48 bits. 
+The Data Encryption Standard (DES) is a symmetric-key block cipher. It is an implementation of a Feistel Cipher. It takes plain text in blocks of 64 bits and converts them to ciphertext using keys of 64 bits. Although the key size is 64 bits, 8 bits are used only for parity checking (a form of error checking). Thus, the key length is only 56 bits. 
 
 There are 16 rounds of encryption in the algorithm, and a different key is used for each round. 
 
