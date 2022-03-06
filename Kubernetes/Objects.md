@@ -1,6 +1,6 @@
 ## Kubernetes Objects  
 
-Kubernetes Objects are persistent entities in the cluster. These objects are used to represent the state of the cluster.  
+Kubernetes Objects are persistent entities in the cluster and are used to represent the state of the cluster.  
 
 Some of the Kubernetes Objects:
 1. Pods
@@ -60,3 +60,43 @@ StatefulSet is a Kubernetes resource used to manage stateful applications. It ma
 ### Daemon Sets
 
 A DaemonSet is a controller that ensures that the pod runs on all the nodes of the cluster. If a node is added/removed from a cluster, DaemonSet automatically adds/deletes the pod. A typical use case for this is monitoring/logging pods that need to run on all the nodes. 
+
+### Services
+
+A Service is a logical collection of pods in a Kubernetes cluster and is used to expose an application. Since pods are regularly created and destroyed, with their IP addresses changing constantly, it will be close to impossible for the application frontend to discover these deployed pods and connect to them. Services keep track of these changes and expose a single IP to the end user. 
+
+There are four types of Kubernetes services — ClusterIP, NodePort, LoadBalancer and ExternalName. 
+
+1. ClusterIP  
+  a. ClusterIP is the default and most common service type.  
+  b. Kubernetes will assign a cluster-internal IP address to ClusterIP service. This makes the service only reachable within the cluster.  
+  c. You cannot make requests to service (pods) from outside the cluster.  
+
+2. NodePort  
+  a. NodePort service is an extension of ClusterIP service. It exposes the service outside of the cluster by adding a cluster-wide port on top of ClusterIP.  
+  b. External traffic has access to fixed port on each Node. It means any request to your cluster on that port gets forwarded to the service.  
+  c. You can contact the NodePort Service, from outside the cluster, by requesting `<NodeIP>:<NodePort>`
+
+3. LoadBalancer  
+  a. LoadBalancer service is an extension of NodePort service.    
+  b. It integrates NodePort with cloud-based load balancers and exposes the service externally using a cloud provider’s load balancer.  
+  c. Each cloud provider (AWS, Azure, GCP, etc) has its own native load balancer implementation. The cloud provider will create a load balancer, which then automatically routes requests to your Kubernetes Service.
+
+4. ExternalName  
+  These services are used to have a cluster internal service name that forwards traffic to another (internal or external) DNS name. In practice what an ExternalName does is create a CNAME record that maps the external DNS name to a cluster-local name. It does not expose anything out of your cluster. 
+
+### ConfigMaps
+
+<p align="center">
+  <img src="../images/configmap.gif" width="300">
+</p>
+
+In Kubernetes, ConfigMaps are used to store your application's configuration settings (connection strings, public credentials, hostnames, etc.) as a dictionary. This dictionary consists of key-value pairs of strings which are then provided to the containers. We use this approach as we want to keep application code separate from configuration. 
+
+As seen in the animation above, we can use different configuration settings for our containers based on our needs by using ConfigMaps. 
+
+### Volumes
+
+A Kubernetes volume is a directory that contains data accessible to containers in a given Pod in the orchestration and scheduling platform. Volumes provide a plug-in mechanism to connect ephemeral containers with persistent data stores elsewhere. Kubernetes volumes persist until the Pod is deleted. 
+
+No matter what Node the Pod runs on, Kubernetes will mount the Pod's volumes to it, allowing containers to move across infrastructure without losing access to the externally hosted data that they require for the workload.
